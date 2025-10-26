@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAR 117 - Flight & Duty Limitations</title>
+    <!-- Favicon for all browsers -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/c06c687f-5fad-4603-a166-ab65470ecaeb.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/c06c687f-5fad-4603-a166-ab65470ecaeb.png">
+
+    <!-- Apple Touch Icon (iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/c06c687f-5fad-4603-a166-ab65470ecaeb.png">
+
+    <!-- Android/Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/c06c687f-5fad-4603-a166-ab65470ecaeb.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/c06c687f-5fad-4603-a166-ab65470ecaeb.png">
+
+    <!-- Web App Manifest for Android -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkZBUiAxMTcgR3VpZGUiLAogICJzaG9ydF9uYW1lIjogIkZBUiAxMTciLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJodHRwczovL3VzZXItZ2VuLW1lZGlhLWFzc2V0cy5zMy5hbWF6b25hd3MuY29tL2dlbWluaV9pbWFnZXMvYzA2YzY4N2YtNWZhZC00NjAzLWExNjYtYWI2NTQ3MGVjYWViLnBuZyIsCiAgICAgICJzaXplcyI6ICIxOTJ4MTkyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJodHRwczovL3VzZXItZ2VuLW1lZGlhLWFzc2V0cy5zMy5hbWF6b25hd3MuY29tL2dlbWluaV9pbWFnZXMvYzA2YzY4N2YtNWZhZC00NjAzLWExNjYtYWI2NTQ3MGVjYWViLnBuZyIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogICAgfQogIF0sCiAgInN0YXJ0X3VybCI6ICIuIiwKICAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgInRoZW1lX2NvbG9yIjogIiMwMDNFN0UiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNGNUY1RjUiCn0=">
+
+    <!-- Theme color for Android Chrome -->
+    <meta name="theme-color" content="#003E7E">
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('data:text/javascript;base64,Y29uc3QgQ0FDSEVfTkFNRSA9ICdmYXItMTE3LXYxJzsKY29uc3QgdXJsc1RvQ2FjaGUgPSBbCiAgJy4vJwpdOwoKc2VsZi5hZGRFdmVudExpc3RlbmVyKCdpbnN0YWxsJywgZXZlbnQgPT4gewogIGV2ZW50LndhaXRVbnRpbCgKICAgIGNhY2hlcy5vcGVuKENBQ0hFX05BTUUpCiAgICAgIC50aGVuKGNhY2hlID0+IGNhY2hlLmFkZEFsbCh1cmxzVG9DYWNoZSkpCiAgKTsKfSk7CgpzZWxmLmFkZEV2ZW50TGlzdGVuZXIoJ2ZldGNoJywgZXZlbnQgPT4gewogIGV2ZW50LnJlc3BvbmRXaXRoKAogICAgY2FjaGVzLm1hdGNoKGV2ZW50LnJlcXVlc3QpCiAgICAgIC50aGVuKHJlc3BvbnNlID0+IHJlc3BvbnNlIHx8IGZldGNoKGV2ZW50LnJlcXVlc3QpKQogICk7Cn0pOw==')
+                    .then(() => console.log('Service Worker registered for offline support'))
+                    .catch(err => console.log('Service Worker registration failed:', err));
+            });
+        }
+    </script>
+
+    <style>
+        :root {
+            --primary-blue: #003E7E;
+            --light-blue: #E8F4F8;
+            --navy: #002147;
+            --text-dark: #333333;
+            --text-secondary: #666666;
+            --accent-orange: #FF6B35;
+            --border-color: #DDDDDD;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: #F5F5F5;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--navy) 100%);
+            color: var(--white);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .pdf-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--accent-orange);
+            color: var(--white);
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .pdf-button:hover {
+            background-color: #E55A2B;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .secondary-button {
+            background-color: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .secondary-button:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        .search-container {
+            padding: 1rem;
+            background-color: var(--white);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .tabs {
+            display: flex;
+            background-color: var(--white);
+            border-bottom: 2px solid var(--border-color);
+            overflow-x: auto;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .tab.active {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+            background-color: var(--light-blue);
+        }
+
+        .tab:hover {
+            background-color: var(--light-blue);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .accordion-item {
+            background-color: var(--white);
+            margin-bottom: 0.75rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            background-color: var(--white);
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: var(--light-blue);
+        }
+
+        .accordion-header.active {
+            background-color: var(--light-blue);
+        }
+
+        .accordion-title {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+        }
+
+        .accordion-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            color: var(--primary-blue);
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 2000px;
+        }
+
+        .accordion-body {
+            padding: 1.25rem;
+            white-space: pre-wrap;
+            line-height: 1.8;
+            color: var(--text-dark);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .table-container {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+
+        .table-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .table-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        td {
+            background-color: var(--white);
+        }
+
+        tr:nth-child(even) td {
+            background-color: #F9F9F9;
+        }
+
+        .quick-ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .quick-ref-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .quick-ref-category {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .quick-ref-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .quick-ref-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .quick-ref-label {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .quick-ref-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-secondary);
+        }
+
+        .offline-indicator {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background-color: var(--accent-orange);
+            color: var(--white);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 1000;
+            display: none;
+        }
+
+        .offline-indicator.show {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.2rem;
+            }
+
+            .header .subtitle {
+                font-size: 0.8rem;
+            }
+
+            .pdf-button {
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .tab {
+                font-size: 0.9rem;
+                padding: 0.75rem 0.5rem;
+            }
+
+            .accordion-title {
+                font-size: 1rem;
+            }
+
+            .table-container {
+                padding: 1rem;
+            }
+
+            .offline-indicator {
+                bottom: 0.5rem;
+                right: 0.5rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/c06c687f-5fad-4603-a166-ab65470ecaeb.png" alt="FAR 117 Logo" style="width: 80px; height: 80px; margin: 0 auto 1rem; display: block; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <h1>14 CFR Part 117</h1>
+        <div class="subtitle">Flight and Duty Limitations and Rest Requirements: Flightcrew Members</div>
+        <div class="header-buttons">
+            <a href="https://www.alpa.org/-/media/Project/ALPA/Alpa/Files/Member/Resources/Flight-Time-Duty-Time/Flight-Time-Limitations-and-Rest-Requirements-Guide---Part-117.pdf" target="_blank" rel="noopener noreferrer" class="pdf-button" onclick="window.open(this.href, '_blank'); return false;">
+                📄 ALPA Part 117 Guide (PDF)
+            </a>
+            <a href="https://www.alpa.org/Resources/Preflight/Flight-Time-Duty-Time/Part-117-Interpretations" target="_blank" rel="noopener noreferrer" class="pdf-button secondary-button" onclick="window.open(this.href, '_blank'); return false;">
+                📋 FAR 117 Interpretations
+            </a>
+        </div>
+    </header>
+
+    <div class="search-container">
+        <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search sections...">
+    </div>
+
+    <div class="tabs">
+        <button class="tab active" onclick="showTab('sections')">Sections</button>
+        <button class="tab" onclick="showTab('tables')">Tables</button>
+        <button class="tab" onclick="showTab('quickref')">Quick Reference</button>
+    </div>
+
+    <div class="content">
+        <div id="sections" class="tab-content active">
+            <div id="sectionsContainer"></div>
+        </div>
+
+        <div id="tables" class="tab-content">
+            <div class="table-container">
+                <div class="table-title">Table A: Maximum Flight Time Limits for Unaugmented Operations</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time of Report (Acclimated)</th>
+                            <th>Maximum Flight Time (Hours)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0000-0459</td><td>8</td></tr>
+                        <tr><td>0500-1959</td><td>9</td></tr>
+                        <tr><td>2000-2359</td><td>8</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-container">
+                <div class="table-title">Table B: Flight Duty Period - Unaugmented Operations</div>
+                <div class="table-subtitle">Maximum flight duty period (hours) for lineholders based on number of flight segments</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Start Time (Acclimated)</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                            <th>6</th>
+                            <th>7+</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0000-0359</td><td>9</td><td>9</td><td>9</td><td>9</td><td>9</td><td>9</td><td>9</td></tr>
+                        <tr><td>0400-0459</td><td>10</td><td>10</td><td>10</td><td>10</td><td>9</td><td>9</td><td>9</td></tr>
+                        <tr><td>0500-0559</td><td>12</td><td>12</td><td>12</td><td>12</td><td>11.5</td><td>11</td><td>10.5</td></tr>
+                        <tr><td>0600-0659</td><td>13</td><td>13</td><td>12</td><td>12</td><td>11.5</td><td>11</td><td>10.5</td></tr>
+                        <tr><td>0700-1159</td><td>14</td><td>14</td><td>13</td><td>13</td><td>12.5</td><td>12</td><td>11.5</td></tr>
+                        <tr><td>1200-1259</td><td>13</td><td>13</td><td>13</td><td>13</td><td>12.5</td><td>12</td><td>11.5</td></tr>
+                        <tr><td>1300-1659</td><td>12</td><td>12</td><td>12</td><td>12</td><td>11.5</td><td>11</td><td>10.5</td></tr>
+                        <tr><td>1700-2159</td><td>12</td><td>12</td><td>11</td><td>11</td><td>10</td><td>9</td><td>9</td></tr>
+                        <tr><td>2200-2259</td><td>11</td><td>11</td><td>10</td><td>10</td><td>9</td><td>9</td><td>9</td></tr>
+                        <tr><td>2300-2359</td><td>10</td><td>10</td><td>10</td><td>9</td><td>9</td><td>9</td><td>9</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-container">
+                <div class="table-title">Table C: Flight Duty Period - Augmented Operations</div>
+                <div class="table-subtitle">Maximum flight duty period (hours) based on rest facility and number of pilots</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Start Time (Acclimated)</th>
+                            <th>Class 1<br>3 Pilots</th>
+                            <th>Class 1<br>4 Pilots</th>
+                            <th>Class 2<br>3 Pilots</th>
+                            <th>Class 2<br>4 Pilots</th>
+                            <th>Class 3<br>3 Pilots</th>
+                            <th>Class 3<br>4 Pilots</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0000-0559</td><td>15</td><td>17</td><td>14</td><td>15.5</td><td>13</td><td>13.5</td></tr>
+                        <tr><td>0600-0659</td><td>16</td><td>18.5</td><td>15</td><td>16.5</td><td>14</td><td>14.5</td></tr>
+                        <tr><td>0700-1259</td><td>17</td><td>19</td><td>16.5</td><td>18</td><td>15</td><td>15.5</td></tr>
+                        <tr><td>1300-1659</td><td>16</td><td>18.5</td><td>15</td><td>16.5</td><td>14</td><td>14.5</td></tr>
+                        <tr><td>1700-2359</td><td>15</td><td>17</td><td>14</td><td>15.5</td><td>13</td><td>13.5</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="quickref" class="tab-content">
+            <div class="quick-ref-grid">
+                <div class="quick-ref-card">
+                    <div class="quick-ref-category">Flight Time Limits</div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">100 hours</div>
+                        <div class="quick-ref-desc">Maximum flight time in any 672 consecutive hours (28 days)</div>
+                    </div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">1,000 hours</div>
+                        <div class="quick-ref-desc">Maximum flight time in any 365 consecutive days (1 year)</div>
+                    </div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">8-9 hours</div>
+                        <div class="quick-ref-desc">Maximum flight time per FDP (varies by report time, see Table A)</div>
+                    </div>
+                </div>
+
+                <div class="quick-ref-card">
+                    <div class="quick-ref-category">Flight Duty Period Limits</div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">60 hours</div>
+                        <div class="quick-ref-desc">Maximum FDP in any 168 consecutive hours (7 days)</div>
+                    </div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">190 hours</div>
+                        <div class="quick-ref-desc">Maximum FDP in any 672 consecutive hours (28 days)</div>
+                    </div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">9-14 hours</div>
+                        <div class="quick-ref-desc">Maximum FDP for unaugmented ops (varies by report time, see Table B)</div>
+                    </div>
+                </div>
+
+                <div class="quick-ref-card">
+                    <div class="quick-ref-category">Rest Requirements</div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">30 hours</div>
+                        <div class="quick-ref-desc">Minimum consecutive rest in past 168 hours before any FDP</div>
+                    </div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">10 hours</div>
+                        <div class="quick-ref-desc">Minimum rest immediately before FDP (with 8 hrs sleep opportunity)</div>
+                    </div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">56 hours</div>
+                        <div class="quick-ref-desc">Minimum rest at home base after crossing 60° longitude</div>
+                    </div>
+                </div>
+
+                <div class="quick-ref-card">
+                    <div class="quick-ref-category">Key Definitions</div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">Acclimated</div>
+                        <div class="quick-ref-desc">72 hours in theater OR 36 consecutive hours free from duty</div>
+                    </div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">Window of Circadian Low</div>
+                        <div class="quick-ref-desc">0200-0559 during physiological night (maximum sleepiness)</div>
+                    </div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">Theater</div>
+                        <div class="quick-ref-desc">Area where departure/arrival differ by ≤60° longitude</div>
+                    </div>
+                </div>
+
+                <div class="quick-ref-card">
+                    <div class="quick-ref-category">Extensions</div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">Up to 2 hours</div>
+                        <div class="quick-ref-desc">FDP extension allowed for unforeseen circumstances (PIC + certificate holder)</div>
+                    </div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">&gt;30 minutes</div>
+                        <div class="quick-ref-desc">Extensions over 30 min require FAA report within 10 days by the certificate holder</div>
+                    </div>
+                    <div class="quick-ref-item">
+                        <div class="quick-ref-label">Once per cycle</div>
+                        <div class="quick-ref-desc">Extension >30 min can only occur once before § 117.25(b) rest</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offline Indicator -->
+    <div id="offlineIndicator" class="offline-indicator">
+        📵 Offline Mode - External links unavailable
+    </div>
+
+    <script>
+        const sectionsData = [
+            {
+                number: "117.1",
+                title: "Applicability",
+                content: `(a) This part prescribes flight and duty limitations and rest requirements for all flightcrew members and certificate holders conducting passenger operations under part 121 of this chapter.
+
+(b) This part applies to all operations directed by part 121 certificate holders under part 91, other than subpart K, of this chapter if any segment is conducted as a domestic passenger, flag passenger, or supplemental passenger operation.
+
+(c) This part applies to all flightcrew members when participating in an operation under part 91, other than subpart K of this chapter, on behalf of the part 121 certificate holder if any flight segment is conducted as a domestic passenger, flag passenger, or supplemental passenger operation
+
+(d) Notwithstanding paragraphs (a), (b) and (c) of this section, a certificate holder may conduct under part 117 its part 121 operations pursuant to 121.470, 121.480, or 121.500.`
+            },
+            {
+                number: "117.3",
+                title: "Definitions",
+                content: `In addition to the definitions in §§ 1.1 and 110.2 of this chapter, the following definitions apply to this part. In the event there is a conflict in definitions, the definitions in this part control for purposes of the flight and duty limitations and rest requirements of this part.
+
+Acclimated means a condition in which a flightcrew member has been in a theater for 72 hours or has been given at least 36 consecutive hours free from duty.
+
+Airport/standby reserve means a defined duty period during which a flightcrew member is required by a certificate holder to be at an airport for a possible assignment.
+
+Augmented flightcrew means a flightcrew that has more than the minimum number of flightcrew members required by the airplane type certificate to operate the aircraft to allow a flightcrew member to be replaced by another qualified flightcrew member for in-flight rest.
+
+Calendar day means a 24-hour period from 0000 through 2359 using Coordinated Universal Time or local time.
+
+Certificate holder means a person who holds or is required to hold an air carrier certificate or operating certificate issued under part 119 of this chapter.
+
+Deadhead transportation means transportation of a flightcrew member as a passenger or non-operating flightcrew member, by any mode of transportation, as required by a certificate holder, excluding transportation to or from a suitable accommodation. All time spent in deadhead transportation is duty and is not rest. For purposes of determining the maximum flight duty period in Table B of this part, deadhead transportation is not considered a flight segment.
+
+Duty means any task that a flightcrew member performs as required by the certificate holder, including but not limited to flight duty period, flight duty, pre- and post-flight duties, administrative work, training, deadhead transportation, aircraft positioning on the ground, aircraft loading, and aircraft servicing.
+
+Fatigue means a physiological state of reduced mental or physical performance capability resulting from lack of sleep or increased physical activity that can reduce a flightcrew member's alertness and ability to safely operate an aircraft or perform safety-related duties.
+
+Fatigue risk management system (FRMS) means a management system for a certificate holder to use to mitigate the effects of fatigue in its particular operations. It is a data-driven process and a systematic method used to continuously monitor and manage safety risks associated with fatigue-related error.
+
+Fit for duty means physiologically and mentally prepared and capable of performing assigned duties at the highest degree of safety.
+
+Flight duty period (FDP) means a period that begins when a flightcrew member is required to report for duty with the intention of conducting a flight, a series of flights, or positioning or ferrying flights, and ends when the aircraft is parked after the last flight and there is no intention for further aircraft movement by the same flightcrew member. A flight duty period includes the duties performed by the flightcrew member on behalf of the certificate holder that occur before a flight segment or between flight segments without a required intervening rest period. Examples of tasks that are part of the flight duty period include deadhead transportation, training conducted in an aircraft or flight simulator, and airport/standby reserve, if the above tasks occur before a flight segment or between flight segments without an intervening required rest period.
+
+Home base means the location designated by a certificate holder where a flightcrew member normally begins and ends his or her duty periods.
+
+Lineholder means a flightcrew member who has an assigned flight duty period and is not acting as a reserve flightcrew member.
+
+Long-call reserve means that, prior to beginning the rest period required by § 117.25, the flightcrew member is notified by the certificate holder to report for a flight duty period following the completion of the rest period.
+
+Physiological night's rest means 10 hours of rest that encompasses the hours of 0100 and 0700 at the flightcrew member's home base, unless the individual has acclimated to a different theater. If the flightcrew member has acclimated to a different theater, the rest must encompass the hours of 0100 and 0700 at the acclimated location.
+
+Report time means the time that the certificate holder requires a flightcrew member to report for an assignment.
+
+Reserve availability period means a duty period during which a certificate holder requires a flightcrew member on short call reserve to be available to receive an assignment for a flight duty period.
+
+Reserve flightcrew member means a flightcrew member who a certificate holder requires to be available to receive an assignment for duty.
+
+Rest facility means a bunk or seat accommodation installed in an aircraft that provides a flightcrew member with a sleep opportunity.
+
+(1) Class 1 rest facility means a bunk or other surface that allows for a flat sleeping position and is located separate from both the flight deck and passenger cabin in an area that is temperature-controlled, allows the flightcrew member to control light, and provides isolation from noise and disturbance.
+
+(2) Class 2 rest facility means a seat in an aircraft cabin that allows for a flat or near flat sleeping position; is separated from passengers by a minimum of a curtain to provide darkness and some sound mitigation; and is reasonably free from disturbance by passengers or flightcrew members.
+
+(3) Class 3 rest facility means a seat in an aircraft cabin or flight deck that reclines at least 40 degrees and provides leg and foot support.
+
+Rest period means a continuous period determined prospectively during which the flightcrew member is free from all restraint by the certificate holder, including freedom from present responsibility for work should the occasion arise.
+
+Scheduled means to appoint, assign, or designate for a fixed time.
+
+Short-call reserve means a period of time in which a flightcrew member is assigned to a reserve availability period.
+
+Split duty means a flight duty period that has a scheduled break in duty that is less than a required rest period.
+
+Suitable accommodation means a temperature-controlled facility with sound mitigation and the ability to control light that provides a flightcrew member with the ability to sleep either in a bed, bunk or in a chair that allows for flat or near flat sleeping position. Suitable accommodation only applies to ground facilities and does not apply to aircraft onboard rest facilities.
+
+Theater means a geographical area in which the distance between the flightcrew member's flight duty period departure point and arrival point differs by no more than 60 degrees longitude.
+
+Unforeseen operational circumstance means an unplanned event of insufficient duration to allow for adjustments to schedules, including unforecast weather, equipment malfunction, or air traffic delay that is not reasonably expected.
+
+Window of circadian low means a period of maximum sleepiness that occurs between 0200 and 0559 during a physiological night.`
+            },
+            {
+                number: "117.5",
+                title: "Fitness for duty",
+                content: `(a) Each flightcrew member must report for any flight duty period rested and prepared to perform his or her assigned duties.
+
+(b) No certificate holder may assign and no flightcrew member may accept assignment to a flight duty period if the flightcrew member has reported for a flight duty period too fatigued to safely perform his or her assigned duties.
+
+(c) No certificate holder may permit a flightcrew member to continue a flight duty period if the flightcrew member has reported him or herself too fatigued to continue the assigned flight duty period.
+
+(d) As part of the dispatch or flight release, as applicable, each flightcrew member must affirmatively state he or she is fit for duty prior to commencing flight.`
+            },
+            {
+                number: "117.7",
+                title: "Fatigue risk management system",
+                content: `(a) No certificate holder may exceed any provision of this part unless approved by the FAA under a Fatigue Risk Management System that provides at least an equivalent level of safety against fatigue-related accidents or incidents as the other provisions of this part.
+
+(b) The Fatigue Risk Management System must include:
+
+(1) A fatigue risk management policy.
+
+(2) An education and awareness training program.
+
+(3) A fatigue reporting system.
+
+(4) A system for monitoring flightcrew fatigue.
+
+(5) An incident reporting process.
+
+(6) A performance evaluation.`
+            },
+            {
+                number: "117.9",
+                title: "Fatigue education and awareness training program",
+                content: `(a) Each certificate holder must develop and implement an education and awareness training program, approved by the Administrator. This program must provide annual education and awareness training to all employees of the certificate holder responsible for administering the provisions of this rule including flightcrew members, dispatchers, individuals directly involved in the scheduling of flightcrew members, individuals directly involved in operational control, and any employee providing direct management oversight of those areas.
+
+(b) The fatigue education and awareness training program must be designed to increase awareness of:
+
+(1) Fatigue;
+
+(2) The effects of fatigue on pilots; and
+
+(3) Fatigue countermeasures
+
+(c)(1) Each certificate holder must update its fatigue education and awareness training program every two years and submit the update to the Administrator for review and acceptance.
+
+(2) Not later than 12 months after the date of submission of the fatigue education and awareness training program required by (c)(1) of this section, the Administrator shall review and accept or reject the update. If the Administrator rejects an update, the Administrator shall provide suggested modifications for resubmission of the update.`
+            },
+            {
+                number: "117.11",
+                title: "Flight time limitation",
+                content: `(a) No certificate holder may schedule and no flightcrew member may accept an assignment or continue an assigned flight duty period if the total flight time:
+
+(1) Will exceed the limits specified in Table A of this part if the operation is conducted with the minimum required flightcrew.
+
+(2) Will exceed 13 hours if the operation is conducted with a 3-pilot flightcrew.
+
+(3) Will exceed 17 hours if the operation is conducted with a 4-pilot flightcrew.
+
+(b) If unforeseen operational circumstances arise after takeoff that are beyond the certificate holder's control, a flightcrew member may exceed the maximum flight time specified in paragraph (a) of this section and the cumulative flight time limits in 117.23(b) to the extent necessary to safely land the aircraft at the next destination airport or alternate, as appropriate.
+
+(c) Each certificate holder must report to the Administrator within 10 days any flight time that exceeded the maximum flight time limits permitted by this section or § 117.23(b). The report must contain a description of the extended flight time limitation and the circumstances surrounding the need for the extension.`
+            },
+            {
+                number: "117.13",
+                title: "Flight duty period: Unaugmented operations",
+                content: `(a) Except as provided for in § 117.15, no certificate holder may assign and no flightcrew member may accept an assignment for an unaugmented flight operation if the scheduled flight duty period will exceed the limits in Table B of this part.
+
+(b) If the flightcrew member is not acclimated:
+
+(1) The maximum flight duty period in Table B of this part is reduced by 30 minutes.
+
+(2) The applicable flight duty period is based on the local time at the theater in which the flightcrew member was last acclimated.`
+            },
+            {
+                number: "117.15",
+                title: "Flight duty period: Split duty",
+                content: `For an unaugmented operation only, if a flightcrew member is provided with a rest opportunity (an opportunity to sleep) in a suitable accommodation during his or her flight duty period, the time that the flightcrew member spends in the suitable accommodation is not part of that flightcrew member's flight duty period if all of the following conditions are met:
+
+(a) The rest opportunity is provided between the hours of 22:00 and 05:00 local time.
+
+(b) The time spent in the suitable accommodation is at least 3 hours, measured from the time that the flightcrew member reaches the suitable accommodation.
+
+(c) The rest opportunity is scheduled before the beginning of the flight duty period in which that rest opportunity is taken.
+
+(d) The rest opportunity that the flightcrew member is actually provided may not be less than the rest opportunity that was scheduled.
+
+(e) The rest opportunity is not provided until the first segment of the flight duty period has been completed.
+
+(f) The combined time of the flight duty period and the rest opportunity provided in this section does not exceed 14 hours.`
+            },
+            {
+                number: "117.17",
+                title: "Flight duty period: Augmented flightcrew",
+                content: `(a) For flight operations conducted with an acclimated augmented flightcrew, no certificate holder may assign and no flightcrew member may accept an assignment if the scheduled flight duty period will exceed the limits specified in Table C of this part.
+
+(b) If the flightcrew member is not acclimated:
+
+(1) The maximum flight duty period in Table C of this part is reduced by 30 minutes.
+
+(2) The applicable flight duty period is based on the local time at the theater in which the flightcrew member was last acclimated.
+
+(c) No certificate holder may assign and no flightcrew member may accept an assignment under this section unless during the flight duty period:
+
+(1) Two consecutive hours in the second half of the flight duty period are available for in-flight rest for the pilot flying the aircraft during landing.
+
+(2) Ninety consecutive minutes are available for in-flight rest for the pilot performing monitoring duties during landing.
+
+(d) No certificate holder may assign and no flightcrew member may accept an assignment involving more than three flight segments under this section.
+
+(e) At all times during flight, at least one flightcrew member qualified in accordance with § 121.543(b)(3)(i) of this chapter must be at the flight controls.`
+            },
+            {
+                number: "117.19",
+                title: "Flight duty period extensions",
+                content: `(a) For augmented and unaugmented operations, if unforeseen operational circumstances arise prior to takeoff:
+
+(1) The pilot in command and the certificate holder may extend the maximum flight duty period permitted in Tables B or C of this part up to 2 hours. The pilot in command and the certificate holder may also extend the maximum combined flight duty period and reserve availability period limits specified in § 117.21(c)(3) and (4) of this part up to 2 hours.
+
+(2) An extension in the flight duty period under paragraph (a)(1) of this section of more than 30 minutes may occur only once prior to receiving a rest period described in § 117.25(b).
+
+(3) A flight duty period cannot be extended under paragraph (a)(1) of this section if it causes a flightcrew member to exceed the cumulative flight duty period limits specified in 117.23(c).
+
+(4) Each certificate holder must report to the Administrator within 10 days any flight duty period that exceeded the maximum flight duty period permitted in Tables B or C of this part by more than 30 minutes. The report must contain the following:
+
+(i) A description of the extended flight duty period and the circumstances surrounding the need for the extension; and
+
+(ii) If the circumstances giving rise to the extension were within the certificate holder's control, the corrective action(s) that the certificate holder intends to take to minimize the need for future extensions.
+
+(5) Each certificate holder must implement the corrective action(s) reported in paragraph (a)(4) of this section within 30 days from the date of the extended flight duty period.
+
+(b) For augmented and unaugmented operations, if unforeseen operational circumstances arise after takeoff:
+
+(1) The pilot in command and the certificate holder may extend maximum flight duty periods specified in Tables B or C of this part to the extent necessary to safely land the aircraft at the next destination airport or alternate airport, as appropriate.
+
+(2) An extension of the flight duty period under paragraph (b)(1) of this section of more than 30 minutes may occur only once prior to receiving a rest period described in § 117.25(b).
+
+(3) An extension taken under paragraph (b) of this section may exceed the cumulative flight duty period limits specified in 117.23(c).
+
+(4) Each certificate holder must report to the Administrator within 10 days any flight duty period that either exceeded the cumulative flight duty periods specified in § 117.23(c), or exceeded the maximum flight duty period limits permitted by Tables B or C of this part by more than 30 minutes. The report must contain a description of the circumstances surrounding the affected flight duty period.`
+            },
+            {
+                number: "117.21",
+                title: "Reserve status",
+                content: `(a) Unless specifically designated as airport/standby or short-call reserve by the certificate holder, all reserve is considered long-call reserve.
+
+(b) Any reserve that meets the definition of airport/standby reserve must be designated as airport/standby reserve. For airport/standby reserve, all time spent in a reserve status is part of the flightcrew member's flight duty period.
+
+(c) For short call reserve,
+
+(1) The reserve availability period may not exceed 14 hours.
+
+(2) For a flightcrew member who has completed a reserve availability period, no certificate holder may schedule and no flightcrew member may accept an assignment of a reserve availability period unless the flightcrew member receives the required rest in § 117.25(e).
+
+(3) For an unaugmented operation, the total number of hours a flightcrew member may spend in a flight duty period and a reserve availability period may not exceed the lesser of the maximum applicable flight duty period in Table B of this part plus 4 hours, or 16 hours, as measured from the beginning of the reserve availability period.
+
+(4) For an augmented operation, the total number of hours a flightcrew member may spend in a flight duty period and a reserve availability period may not exceed the flight duty period in Table C of this part plus 4 hours, as measured from the beginning of the reserve availability period.
+
+(d) For long call reserve, if a certificate holder contacts a flightcrew member to assign him or her to a flight duty period that will begin before and operate into the flightcrew member's window of circadian low, the flightcrew member must receive a 12 hour notice of report time from the certificate holder.
+
+(e) A certificate holder may shift a reserve flightcrew member's reserve status from long-call to short-call only if the flightcrew member receives a rest period as provided in § 117.25(e).`
+            },
+            {
+                number: "117.23",
+                title: "Cumulative limitations",
+                content: `(a) The limitations of this section include all flying by flightcrew members on behalf of any certificate holder or 91K Program Manager during the applicable periods.
+
+(b) No certificate holder may schedule and no flightcrew member may accept an assignment if the flightcrew member's total flight time will exceed the following:
+
+(1) 100 hours in any 672 consecutive hours or
+
+(2) 1,000 hours in any 365 consecutive calendar day period.
+
+(c) No certificate holder may schedule and no flightcrew member may accept an assignment if the flightcrew member's total Flight Duty Period will exceed:
+
+(1) 60 flight duty period hours in any 168 consecutive hours or
+
+(2) 190 flight duty period hours in any 672 consecutive hours.`
+            },
+            {
+                number: "117.25",
+                title: "Rest period",
+                content: `(a) No certificate holder may assign and no flightcrew member may accept assignment to any reserve or duty with the certificate holder during any required rest period.
+
+(b) Before beginning any reserve or flight duty period a flightcrew member must be given at least 30 consecutive hours free from all duty within the past 168 consecutive hour period.
+
+(c) If a flightcrew member operating in a new theater has received 36 consecutive hours of rest, that flightcrew member is acclimated and the rest period meets the requirements of paragraph (b) of this section.
+
+(d) A flightcrew member must be given a minimum of 56 consecutive hours rest upon return to home base if the flightcrew member:
+
+(1) Travels more than 60° longitude during a flight duty period or a series of flight duty period, and
+
+(2) is away from home base for more than 168 consecutive hours during this travel. The 56 hours of rest specified in this section must encompass three physiological nights' rest based on local time.
+
+(e) No certificate holder may schedule and no flightcrew member may accept an assignment for any reserve or flight duty period unless the flightcrew member is given a rest period of at least 10 consecutive hours immediately before beginning the reserve or flight duty period measured from the time the flightcrew member is released from duty. The 10 hour rest period must provide the flightcrew member with a minimum of 8 uninterrupted hours of sleep opportunity.
+
+(f) If a flightcrew member determines that a rest period under paragraph (e) of this section will not provide eight uninterrupted hours of sleep opportunity, the flightcrew member must notify the certificate holder. The flightcrew member cannot report for the assigned flight duty period until he or she receives a rest period specified in paragraph (e) of this section.
+
+(g) If a flightcrew member engaged in deadhead transportation exceeds the applicable flight duty period in Table B of this part, the flightcrew member must be given a rest period equal to the length of the deadhead transportation but not less than the required rest in paragraph (e) of this section before beginning a flight duty period.`
+            },
+            {
+                number: "117.27",
+                title: "Consecutive nighttime operations",
+                content: `A certificate holder may schedule and a flightcrew member may accept up to five consecutive flight duty periods that infringe on the window of circadian low if the certificate holder provides the flightcrew member with an opportunity to rest in a suitable accommodation during each of the consecutive nighttime flight duty periods. The rest opportunity must be at least 2 hours, measured from the time that the flightcrew member reaches the suitable accommodation, and must comply with the conditions specified in § 117.15(a), (c), (d), and (e). Otherwise, no certificate holder may schedule and no flightcrew member may accept more than three consecutive flight duty periods that infringe on the window of circadian low. For purposes of this section, any split duty rest that is provided in accordance with § 117.15 counts as part of a flight duty period.`
+            },
+            {
+                number: "117.29",
+                title: "Emergency and government sponsored operations",
+                content: `(a) This section applies to operations conducted pursuant to contracts with the U.S. Government and operations conducted pursuant to a deviation under § 119.57 of this chapter that cannot otherwise be conducted under this part because of circumstances that could prevent flightcrew members from being relieved by another crew or safely provided with the rest required under § 117.25 at the end of the applicable flight duty period.
+
+(b) The pilot-in-command may determine that the maximum applicable flight duty period, flight time, and/or combined flight duty period and reserve availability period limits must be exceeded to the extent necessary to allow the flightcrew to fly to the closest destination where they can safely be relieved from duty by another flightcrew or can receive the requisite amount of rest prior to commencing their next flight duty period.
+
+(c) A flight duty period may not be extended for an operation conducted pursuant to a contract with the U.S. Government if it causes a flightcrew member to exceed the cumulative flight time limits in § 117.23(b) and the cumulative flight duty period limits in § 117.23(c).
+
+(d) The flightcrew shall be given a rest period immediately after reaching the destination described in paragraph (b) of this section equal to the length of the actual flight duty period or 24 hours, whichever is less.
+
+(e) Each certificate holder must report within 10 days:
+
+(1) Any flight duty period that exceeded the maximum flight duty period permitted in Tables B or C of this part, as applicable, by more than 30 minutes;
+
+(2) Any flight time that exceeded the maximum flight time limits permitted in Table A of this part and § 117.11, as applicable; and
+
+(3) Any flight duty period or flight time that exceeded the cumulative limits specified in § 117.23.
+
+(f) The report must contain the following:
+
+(1) A description of the extended flight duty period and flight time limitation, and the circumstances surrounding the need for the extension; and
+
+(2) If the circumstances giving rise to the extension(s) were within the certificate holder's control, the corrective action(s) that the certificate holder intends to take to minimize the need for future extensions.
+
+(g) Each certificate holder must implement the corrective action(s) reported pursuant to paragraph (f)(2) of this section within 30 days from the date of the extended flight duty period and/or the extended flight time.`
+            }
+        ];
+
+        let allSections = [...sectionsData];
+
+        function renderSections(sections) {
+            const container = document.getElementById('sectionsContainer');
+            if (sections.length === 0) {
+                container.innerHTML = '<div class="no-results">No sections found matching your search.</div>';
+                return;
+            }
+
+            container.innerHTML = sections.map(section => `
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div>
+                            <div class="accordion-title">§ ${section.number} ${section.title}</div>
+                        </div>
+                        <span class="accordion-icon">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">${section.content}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleAccordion(button) {
+            const allHeaders = document.querySelectorAll('.accordion-header');
+            const allContents = document.querySelectorAll('.accordion-content');
+            const content = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+
+            allHeaders.forEach(h => h.classList.remove('active'));
+            allContents.forEach(c => c.classList.remove('active'));
+
+            if (!isActive) {
+                button.classList.add('active');
+                content.classList.add('active');
+            }
+        }
+
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            document.querySelector(`[onclick="showTab('${tabName}')"]`).classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            if (query === '') {
+                renderSections(allSections);
+            } else {
+                const filtered = allSections.filter(section =>
+                    section.title.toLowerCase().includes(query) ||
+                    section.number.includes(query) ||
+                    section.content.toLowerCase().includes(query)
+                );
+                renderSections(filtered);
+            }
+        });
+
+        // Offline detection
+        function updateOfflineStatus() {
+            const indicator = document.getElementById('offlineIndicator');
+            if (!navigator.onLine) {
+                indicator.classList.add('show');
+            } else {
+                indicator.classList.remove('show');
+            }
+        }
+
+        window.addEventListener('online', updateOfflineStatus);
+        window.addEventListener('offline', updateOfflineStatus);
+        updateOfflineStatus();
+
+        // Handle external link clicks when offline
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (!navigator.onLine) {
+                    e.preventDefault();
+                    alert('You are offline. External links are not available. Please connect to the internet to access PDFs and external resources.');
+                }
+            });
+        });
+
+        renderSections(allSections);
+    </script>
+</body>
+</html>
